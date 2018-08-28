@@ -1,0 +1,61 @@
+html {
+/* --cell-size: 10vh; */
+/* --area-size: 70vh; */
+}
+
+
+
+body {
+    margin: 0;
+}
+.wrapper {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.itemBox {
+    position: relative;
+    background-color: #898989;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    flex-wrap: wrap;
+    width: var(--area-size);
+    height: var(--area-size);
+
+}
+.item {
+    min-width: calc(0.95 * var(--cell-size));
+    height: var(--cell-size);
+    flex-grow: 1;
+    border: 1px solid black;
+    background-color: cadetblue;
+}
+.personCell{
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+    position: absolute;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    transition-property: top, left, transform;
+    transition-duration: 2s, 2s, 1s;
+    /* transition-delay: 0.3s, 0.3s, 0.1s; */
+}
+
+
+.personImg{
+    max-height: 80%;
+    width: 70%;
+    /* transform: rotate(90deg); */
+}
