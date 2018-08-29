@@ -23,6 +23,10 @@ function task() {
  
     function createPersonePathway(first){
         let counter = first;
+        while(Math.floor(counter/boxSize) !== 0){
+            personePathway.push('ArrowUp');
+            counter-=boxSize;
+        }
         while(personePathway.length < itemsCount){
             while ( Math.floor(counter/boxSize) === Math.floor((counter + stepSize)/boxSize)){
                 personePathway.push('ArrowRight')
@@ -140,7 +144,7 @@ function task() {
     mutable.style.left = `${position.left}px`;
     mutable.style.top = `${position.top}px`;
     mutable.style.display = "flex";
-    mutable.offsetTop;
+    // mutable.offsetTop;
     }
 
    
@@ -151,7 +155,7 @@ function task() {
     
    
     function animate() {
-      let  fps = 60;
+      let  fps = 40;
       let time = 1000 * personePathway.length;
       let steps = time / (1000);   
       let timer = setInterval(function(){
