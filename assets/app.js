@@ -7,7 +7,7 @@ function task() {
     const itemsCount = boxSize**2;
     const box = document.getElementById('box');
     const person = document.getElementById('person');
-    const start = 2;
+    const start = 0;
     const setupKeys = 
     {ArrowRight: +stepSize,
      ArrowLeft:-stepSize,
@@ -23,6 +23,7 @@ function task() {
  
     function createPersonePathway(first){
         let counter = first;
+
         while(Math.floor(counter/boxSize) !== 0){
             personePathway.push('ArrowUp');
             counter-=boxSize;
@@ -106,7 +107,7 @@ function task() {
     function startMove(newCurrent){
      current = newCurrent;
      findPositionMutableEl(newCurrent, person);
-
+     
     }
 
 
@@ -126,7 +127,9 @@ function task() {
     } 
 
      rotatePerson(step);
+     makeCleaner(current);
      startMove(sum);
+     makeCleaner(sum);
     }
     
 
@@ -146,7 +149,14 @@ function task() {
     mutable.style.display = "flex";
     // mutable.offsetTop;
     }
+    function makeCleaner(cell){
+      let cleanCell = document.getElementById(cell);
+      console.log('cleanCell',cleanCell);
+    //   cleanCell.style.backgroundColor = 'lightskyblue';
+    cleanCell.style.backgroundColor = '#87b6b8';
 
+        
+    }
    
     createBox();
     createPersonePathway(start);
